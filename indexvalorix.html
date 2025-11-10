@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valorix Media - Gym Marketing Agency</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin:0; font-family: 'Inter', sans-serif; background: #0b1f3b; color:white; }
+    a { color:white; text-decoration:none; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .btn { cursor:pointer; font-weight:bold; border:none; border-radius:6px; transition:all 0.2s ease; }
+    .btn-primary { background: linear-gradient(90deg, #ff7a00, #ff2a00); color:#0b1f3b; padding:12px 24px; }
+    .btn-primary:hover { transform:scale(1.05); }
+    .btn-secondary { background:transparent; border:2px solid white; padding:12px 24px; }
+    .btn-secondary:hover { background:white; color:#0b1f3b; transform:scale(1.05); }
+    section { padding:80px 0; text-align:center; }
+    h1,h2,h3 { margin:0 0 20px 0; }
+    .services { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+    .service-card { background:#112e50; padding:20px; border-radius:8px; width:250px; transition:all 0.2s ease; }
+    .service-card:hover { transform:scale(1.05); }
+    form { display:flex; flex-direction:column; gap:12px; max-width:400px; margin:0 auto; }
+    input, textarea { padding:12px; border-radius:6px; border:none; font-size:16px; }
+    footer { background:#0a1730; padding:40px 0; font-size:14px; color:#aaa; text-align:center; }
+    @media(max-width:768px) { .services { flex-direction:column; align-items:center; } }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section style="background:linear-gradient(180deg,#0b1f3b,#112e50);">
+    <div class="container">
+      <h1 style="font-size:2.5rem;">Get 10+ New Gym Members Every Month — Or Your Money Back</h1>
+      <p style="font-size:1.2rem; max-width:700px; margin:20px auto;">
+        Valorix Media helps gyms grow memberships with high-converting social media campaigns, lead funnels, and content that converts.
+      </p>
+      <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+        <button class="btn btn-primary" onclick="window.open('https://calendly.com/valorix-marketing-agency/new-meeting','_blank')">Book Free Strategy Call</button>
+        <a href="#contact" class="btn btn-secondary">Request Free Audit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section style="background:#112e50;">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="services">
+        <div class="service-card">
+          <h3>Paid Social Ads</h3>
+          <p>Facebook & Instagram campaigns that attract new members.</p>
+        </div>
+        <div class="service-card">
+          <h3>Lead Generation Funnels</h3>
+          <p>Automated booking pages to fill your classes.</p>
+        </div>
+        <div class="service-card">
+          <h3>Content Creation</h3>
+          <p>Short-form videos & reels that convert followers into members.</p>
+        </div>
+        <div class="service-card">
+          <h3>Membership Growth Strategy</h3>
+          <p>Optimized campaigns & A/B testing to maximize ROI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Form Section -->
+  <section id="contact" style="background:#0b1f3b;">
+    <div class="container">
+      <h2>Request Your Free Growth Audit</h2>
+      <p>We guarantee 10+ new gym members every month or your money back.</p>
+      <form action="https://formspree.io/f/your_form_id" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <input type="text" name="gym" placeholder="Gym Name">
+        <button type="submit" class="btn btn-primary">Request Audit</button>
+      </form>
+      <button class="btn btn-secondary" style="margin-top:20px;" onclick="window.open('https://calendly.com/valorix-marketing-agency/new-meeting','_blank')">Book a 15-min Call</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Valorix Media — Social Media Marketing for Gyms</p>
+    <p>Email: <a href="mailto:hello@valorixagency.com">hello@valorixagency.com</a></p>
+  </footer>
+
+</body>
+</html>
