@@ -1,234 +1,709 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valorix Media — Gym Marketing Agency</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Valorix Media — Gym Growth Agency</title>
+  <meta name="description" content="Valorix Media — Get 10+ new gym members every month. Elite social ads, funnels & content. Book a free strategy call." />
+  <meta name="theme-color" content="#07152e" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>V</text></svg>">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    /* ====== Base ====== */
-    * {margin:0; padding:0; box-sizing:border-box;}
-    body {
-      font-family:'Inter', sans-serif;
-      background: radial-gradient(circle at top left, #0b1f3b, #07152e);
-      color:white;
-      scroll-behavior:smooth;
-      overflow-x:hidden;
+    /* ===============================
+       VALORIX — Ultimate Single File SPA
+       - Perfected, compatible, performant
+       =============================== */
+
+    :root {
+      --bg-1: #07152e;
+      --bg-2: #0b1f3b;
+      --card: #0f2b49;
+      --accent-1: #ff7a00;
+      --accent-2: #ff2a00;
+      --muted: #9fb3d7;
+      --glass: rgba(255,255,255,0.03);
+      --glass-strong: rgba(255,255,255,0.05);
+      --text: #eaf3ff;
+      --radius: 14px;
+      --maxw: 1200px;
+      --shadow: 0 14px 40px rgba(2,6,23,0.55);
+      --nav-height: 72px;
     }
-    .container {max-width:1200px; margin:0 auto; padding:0 20px;}
-    a {color:inherit; text-decoration:none;}
-    h1,h2,h3 {font-weight:700;}
-    section {padding:100px 0; text-align:center;}
-    
-    /* ====== Header ====== */
-    header {
-      position:fixed;
-      top:0; left:0; width:100%;
-      background:rgba(11,31,59,0.9);
+
+    /* Light theme variables */
+    html.light {
+      --bg-1: #f8fafc;
+      --bg-2: #edf2f7;
+      --card: #ffffff;
+      --accent-1: #c6922b;
+      --accent-2: #ffb84d;
+      --muted: #385670;
+      --glass: rgba(11,31,59,0.04);
+      --glass-strong: rgba(11,31,59,0.06);
+      --text: #07152e;
+      --shadow: 0 14px 40px rgba(11,31,59,0.08);
+    }
+
+    /* Base */
+    * { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    html, body { height: 100%; margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: radial-gradient(circle at 6% 8%, var(--bg-2), var(--bg-1)); color: var(--text); scroll-behavior: smooth; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header.main-header {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1200;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
       backdrop-filter: blur(8px);
-      display:flex; justify-content:space-between; align-items:center;
-      padding:15px 40px;
-      z-index:1000;
-      border-bottom:1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.03);
     }
-    header h1 {font-size:1.3rem; color:#ff7a00; letter-spacing:0.5px;}
-    .lang-toggle {
-      display:flex; gap:10px; align-items:center;
+    .header-inner { width: 100%; max-width: var(--maxw); display: flex; align-items: center; justify-content: space-between; padding: 0 20px; gap: 12px; }
+    .brand { display: flex; gap: 12px; align-items: center; }
+    .logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      color: #07152e;
+      font-weight: 800;
+      font-size: 22px;
+      box-shadow: 0 10px 28px rgba(255,122,0,0.14);
     }
-    .lang-toggle img {
-      width:30px; height:20px; cursor:pointer; border-radius:4px; border:1px solid rgba(255,255,255,0.3);
-      transition:all 0.3s ease;
-    }
-    .lang-toggle img:hover {transform:scale(1.1);}
+    .brand .title { font-weight: 800; letter-spacing: 0.6px; }
+    nav.main-nav { display: flex; gap: 10px; align-items: center; }
+    nav.main-nav a { padding: 8px 12px; border-radius: 10px; font-weight: 600; color: var(--muted); transition: all 0.18s ease; }
+    nav.main-nav a:hover, nav.main-nav a.active { background: linear-gradient(90deg, rgba(255,122,0,0.06), rgba(255,42,0,0.04)); color: var(--text); box-shadow: var(--shadow); }
 
-    /* ====== Hero ====== */
+    .controls { display: flex; gap: 8px; align-items: center; }
+    .icon-btn { background: var(--glass); border-radius: 10px; padding: 8px; cursor: pointer; border: 1px solid rgba(255,255,255,0.03); display: inline-flex; align-items: center; justify-content: center; }
+    .flag { width: 28px; height: 18px; border-radius: 4px; cursor: pointer; border: 1px solid rgba(255,255,255,0.04); }
+
+    /* Particles full-screen canvas */
+    #particles { position: fixed; left: 0; top: 0; right: 0; bottom: 0; z-index: 0; pointer-events: none; mix-blend-mode: screen; opacity: 0.16; }
+
+    /* Main area */
+    main { position: relative; z-index: 10; padding-top: calc(var(--nav-height) + 20px); }
+
+    /* HERO */
     .hero {
-      min-height:100vh;
-      display:flex; flex-direction:column; justify-content:center; align-items:center;
-      background:linear-gradient(180deg,#0b1f3b,#112e50);
-      padding:120px 20px 80px;
-      text-align:center;
+      min-height: calc(100vh - var(--nav-height) - 20px);
+      display: flex;
+      align-items: center;
+      padding: 84px 0;
+      position: relative;
+      overflow: visible;
     }
-    .hero h2 {
-  font-size: 2.8rem;
-  background: linear-gradient(90deg, #ff7a00, #ff2a00);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent; /* fallback for non-supporting browsers */
-  margin-bottom: 20px;
-}
-
-    .hero p {max-width:700px; color:#d7e0f5; font-size:1.2rem; margin-bottom:40px;}
-    .hero-buttons {display:flex; gap:20px; flex-wrap:wrap; justify-content:center;}
-    
-    /* ===== Buttons ===== */
+    .hero-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 32px;
+      align-items: center;
+      margin: 0 auto;
+      max-width: var(--maxw);
+    }
+    .hero h1 {
+      font-size: clamp(28px, 4.2vw, 52px);
+      line-height: 1.02;
+      margin: 0 0 18px;
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+    .hero p { color: var(--muted); font-size: 18px; margin-bottom: 22px; max-width: 780px; }
+    .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
     .btn {
-      border:none; border-radius:10px; padding:14px 32px; font-weight:600; font-size:16px;
-      cursor:pointer; transition:all 0.3s ease;
+      border: 0;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.16s ease, box-shadow 0.16s ease;
     }
-    .btn-primary {
-      background:linear-gradient(90deg,#ff7a00,#ff2a00);
-      color:#0b1f3b;
-      box-shadow:0 0 20px rgba(255,122,0,0.4);
+    .btn-primary { background: linear-gradient(90deg, var(--accent-1), var(--accent-2)); color: #07152e; box-shadow: 0 16px 36px rgba(255,122,0,0.14); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 20px 44px rgba(255,42,0,0.14); }
+    .btn-ghost { background: transparent; border: 1px solid rgba(255,255,255,0.06); color: var(--text); }
+
+    .kpis { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+    .kpi { background: var(--glass-strong); padding: 10px 14px; border-radius: 999px; color: var(--muted); font-weight: 700; }
+
+    /* Card/form on right */
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding: 22px;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.03);
     }
-    .btn-primary:hover {
-      transform:scale(1.05);
-      box-shadow:0 0 25px rgba(255,122,0,0.6);
+    .card h4 { margin: 0 0 8px; font-size: 18px; }
+    .input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      background: rgba(255,255,255,0.02);
+      color: var(--text);
+      outline: none;
+      font-weight: 700;
+      margin-bottom: 10px;
     }
-    .btn-secondary {
-      border:2px solid white;
-      background:transparent;
-      color:white;
+    .input::placeholder { color: rgba(255,255,255,0.45); }
+
+    /* Sections */
+    .section { padding: 84px 0; }
+    .section .title { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 18px; }
+    .service {
+      padding: 18px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 10px 26px rgba(2,6,23,0.36);
     }
-    .btn-secondary:hover {
-      background:white; color:#0b1f3b; transform:scale(1.05);
+    .service h5 { margin: 0 0 8px; color: var(--accent-1); }
+    .service p { color: var(--muted); font-size: 14px; }
+
+    /* Case studies */
+    .cases { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+    .case {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 12px;
+      border-radius: 12px;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.03);
     }
 
-    /* ====== Services ====== */
-    .services {
-      display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:50px;
+    /* Calendly embed */
+    .calendly-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.04);
+      box-shadow: 0 18px 44px rgba(2,6,23,0.46);
     }
-    .service-card {
-      background:#112e50; padding:30px; border-radius:12px; width:260px;
-      transition:all 0.4s ease; box-shadow:0 0 10px rgba(0,0,0,0.3);
-    }
-    .service-card:hover {
-      transform:translateY(-10px) scale(1.05);
-      box-shadow:0 0 25px rgba(255,122,0,0.3);
-    }
-    .service-card h3 {color:#ff7a00; margin-bottom:10px;}
-    .service-card p {color:#d7e0f5; font-size:0.95rem;}
+    .calendly-iframe { width: 100%; height: 720px; border: 0; display: block; }
 
-    /* ====== Form ====== */
-    form {
-      display:flex; flex-direction:column; gap:15px;
-      max-width:420px; margin:40px auto 0;
-    }
-    input {
-      padding:14px; border-radius:8px; border:none; font-size:16px;
-      outline:none;
-    }
-    input:focus {box-shadow:0 0 8px #ff7a00;}
-    
-    /* ====== Footer ====== */
-    footer {
-      background:#0a1730; padding:40px 0; text-align:center; color:#aaa; font-size:14px;
-    }
-    footer a:hover {color:#ff7a00;}
+    /* Contact */
+    form.contact-grid { max-width: 720px; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+    textarea.input { grid-column: 1 / -1; min-height: 120px; resize: vertical; }
 
-    /* ===== Animations ===== */
-    [data-animate] {opacity:0; transform:translateY(30px); transition:all 0.6s ease-out;}
-    [data-animate].visible {opacity:1; transform:translateY(0);}
-    @media(max-width:768px){
-      .services {flex-direction:column; align-items:center;}
-      .hero h2 {font-size:2rem;}
-      header {padding:15px 20px;}
+    /* Footer */
+    footer.site-footer { padding: 36px 0; border-top: 1px solid rgba(255,255,255,0.03); color: var(--muted); margin-top: 28px; }
+
+    /* Floating decorative images for 3D feeling */
+    .float-wrap { position: absolute; inset: auto; pointer-events: none; }
+    .float-img {
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 30px 70px rgba(2,6,23,0.5);
+      transform-origin: center;
+      transition: transform 0.5s ease, opacity 0.45s ease;
+    }
+
+    /* Accessibility helpers */
+    .visually-hidden { position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px,1px,1px,1px); white-space: nowrap; }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 18px; }
+      nav.main-nav { display: none; }
+      .calendly-iframe { height: 620px; }
+    }
+    @media (max-width: 560px) {
+      header.main-header { padding: 8px 10px; }
+      .logo { width: 40px; height: 40px; }
+      .calendly-iframe { height: 560px; }
     }
   </style>
 </head>
+
 <body>
+  <!-- Particles backdrop -->
+  <canvas id="particles" aria-hidden="true"></canvas>
 
   <!-- Header -->
-  <header>
-    <h1>VALORIX MEDIA</h1>
-    <div class="lang-toggle">
-      <img src="https://flagcdn.com/w20/us.png" alt="English" id="en-btn" title="English">
-      <img src="https://flagcdn.com/w20/fr.png" alt="Français" id="fr-btn" title="Français">
+  <header class="main-header" role="banner" aria-label="Main header">
+    <div class="header-inner">
+      <div class="brand" aria-hidden="false">
+        <div class="logo" aria-hidden="true">V</div>
+        <div>
+          <div class="title">VALORIX</div>
+          <div class="micro" style="font-size:12px;color:var(--muted)">Media — Gym Growth</div>
+        </div>
+      </div>
+
+      <nav class="main-nav" role="navigation" aria-label="Primary">
+        <a href="#home" data-route class="navlink">Home</a>
+        <a href="#services" data-route class="navlink">Services</a>
+        <a href="#case-studies" data-route class="navlink">Case Studies</a>
+        <a href="#booking" data-route class="navlink">Booking</a>
+        <a href="#contact" data-route class="navlink">Contact</a>
+      </nav>
+
+      <div class="controls" role="toolbar" aria-label="site controls">
+        <div id="theme-toggle" class="icon-btn" title="Toggle theme" role="button" aria-pressed="false" tabindex="0">🌙</div>
+        <img id="btn-en" src="https://flagcdn.com/w20/us.png" alt="English" class="flag" title="English">
+        <img id="btn-fr" src="https://flagcdn.com/w20/fr.png" alt="Français" class="flag" title="Français">
+      </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero" id="hero" data-animate>
-    <div class="container">
-      <h2 data-en="Get 10+ New Gym Members Every Month — Or Your Money Back"
-          data-fr="Obtenez 10+ nouveaux membres chaque mois — ou remboursement garanti"></h2>
-      <p data-en="Valorix Media helps gyms grow with powerful social media campaigns, automated funnels, and high-performing content."
-         data-fr="Valorix Media aide les salles de sport à se développer grâce à des campagnes sur les réseaux sociaux, des tunnels automatisés et du contenu performant."></p>
-      <div class="hero-buttons">
-        <button class="btn btn-primary" onclick="window.open('https://calendly.com/valorix-marketing-agency/new-meeting','_blank')" data-en="Book Free Strategy Call" data-fr="Réserver un appel gratuit">Book Free Strategy Call</button>
-        <a href="#contact" class="btn btn-secondary" data-en="Request Free Audit" data-fr="Demander un audit gratuit">Request Free Audit</a>
+  <main id="app" role="main" aria-live="polite">
+    <!-- HOME -->
+    <section id="home" class="hero" aria-label="Hero">
+      <div class="hero-grid">
+        <div style="position:relative; z-index:2">
+          <h1 data-i18n='{"en":"Get 10+ New Gym Members Every Month — Or Your Money Back","fr":"Obtenez 10+ nouveaux membres par mois — remboursement garanti"}'></h1>
+          <p class="micro" data-i18n='{"en":"We run hyper-targeted ads, build conversion funnels, and create content that turns followers into members.","fr":"Nous gérons des publicités hyper-ciblées, construisons des tunnels de conversion et créons du contenu qui transforme les abonnés en membres."}'></p>
+
+          <div class="cta-row">
+            <button id="book-call" class="btn btn-primary" data-i18n='{"en":"Book Free Strategy Call","fr":"Réserver un appel stratégique"}'>Book Free Strategy Call</button>
+            <a href="#contact" data-route class="btn btn-ghost" data-i18n='{"en":"Request Free Audit","fr":"Demander un audit gratuit"}'>Request Free Audit</a>
+          </div>
+
+          <div class="kpis" aria-hidden="true">
+            <div class="kpi" data-i18n='{"en":"10+ members guaranteed","fr":"Garantie 10+ membres"}'>10+ members guaranteed</div>
+            <div class="kpi" data-i18n='{"en":"CRO funnels","fr":"Tunnels CRO"}'>CRO funnels</div>
+            <div class="kpi" data-i18n='{"en":"Data-driven growth","fr":"Croissance pilotée par les données"}'>Data-driven growth</div>
+          </div>
+        </div>
+
+        <aside class="card" aria-label="Free growth audit card" role="region">
+          <h4 data-i18n='{"en":"Request your free growth audit","fr":"Demandez votre audit gratuit"}'>Request your free growth audit</h4>
+          <p class="micro" data-i18n='{"en":"No obligation. We analyze your funnel and give three immediate wins.","fr":"Sans engagement. Nous analysons votre tunnel et donnons 3 actions immédiates."}'>No obligation. We analyze your funnel and give three immediate wins.</p>
+
+          <form id="lead-form" action="https://formspree.io/f/xdkyongv" method="POST" novalidate>
+            <label class="visually-hidden" for="lead-name">Name</label>
+            <input id="lead-name" name="name" class="input" placeholder="Your name / Votre nom" required>
+
+            <label class="visually-hidden" for="lead-email">Email</label>
+            <input id="lead-email" name="_replyto" class="input" type="email" placeholder="Email / Email" required>
+
+            <label class="visually-hidden" for="lead-gym">Gym name</label>
+            <input id="lead-gym" name="gym" class="input" placeholder="Gym name / Nom de la salle">
+
+            <label class="visually-hidden" for="lead-message">Message</label>
+            <input id="lead-message" name="message" class="input" placeholder="Tell us briefly what you need / Dites-nous brièvement" style="margin-bottom:12px">
+
+            <button type="submit" class="submit" data-i18n='{"en":"Request Audit","fr":"Demander un audit"}'>Request Audit</button>
+
+            <div style="margin-top:12px;font-size:13px;color:var(--muted)">
+              Email: <a href="mailto:valorix.marketing.agency@gmail.com">valorix.marketing.agency@gmail.com</a>
+            </div>
+          </form>
+        </aside>
+
+        <!-- Floating decorative images for 3D effect -->
+        <div class="float-wrap" aria-hidden="true" style="z-index:1">
+          <img src="https://images.unsplash.com/photo-1546480899-6b51b9b5b4a6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1c2d3e4f5a6b7c8d9e0f" class="float-img" style="right:-60px; top:60px; transform: translateZ(0) rotate(-5deg); opacity:0.98;">
+          <img src="https://images.unsplash.com/photo-1517960413843-0aee8e2b2f2b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=2a3b4c5d6e7f8g9h0i1j" class="float-img" style="left:-60px; bottom:-40px; width:180px; height:180px; transform: translateZ(0) rotate(6deg); opacity:0.94;">
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Services -->
-  <section style="background:#112e50;" data-animate>
-    <div class="container">
-      <h2 data-en="Our Services" data-fr="Nos Services"></h2>
-      <p data-en="Everything your gym needs to grow — all in one place." data-fr="Tout ce dont votre salle de sport a besoin pour croître — en un seul endroit."></p>
-      <div class="services">
-        <div class="service-card">
-          <h3 data-en="Paid Social Ads" data-fr="Publicités sur les réseaux sociaux">Paid Social Ads</h3>
-          <p data-en="Facebook & Instagram ads that attract new members ready to join."
-             data-fr="Campagnes Facebook & Instagram qui attirent de nouveaux membres prêts à s’inscrire."></p>
+    <!-- SERVICES -->
+    <section id="services" class="section" aria-label="Services">
+      <div class="container">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+          <div>
+            <div class="title" data-i18n='{"en":"Our Services","fr":"Nos services"}'>Our Services</div>
+            <div class="micro" data-i18n='{"en":"Everything gyms need to scale memberships.","fr":"Tout ce dont les salles ont besoin pour développer leurs adhésions."}'>Everything gyms need to scale memberships.</div>
+          </div>
+          <div style="display:flex;gap:12px;">
+            <a class="btn btn-ghost" href="#booking" data-route data-i18n='{"en":"Start Growing","fr":"Commencer"}'>Start Growing</a>
+            <a class="btn btn-primary" href="#case-studies" data-route data-i18n='{"en":"See Case Studies","fr":"Voir cas"}'>See Case Studies</a>
+          </div>
         </div>
-        <div class="service-card">
-          <h3 data-en="Lead Generation Funnels" data-fr="Tunnels de génération de leads">Lead Generation Funnels</h3>
-          <p data-en="Automated booking pages that fill your gym classes efficiently."
-             data-fr="Pages de réservation automatisées pour remplir vos cours efficacement."></p>
-        </div>
-        <div class="service-card">
-          <h3 data-en="Content Creation" data-fr="Création de contenu">Content Creation</h3>
-          <p data-en="Short-form videos and reels that turn followers into paying clients."
-             data-fr="Vidéos et reels percutants qui transforment les abonnés en clients."></p>
-        </div>
-        <div class="service-card">
-          <h3 data-en="Growth Strategy" data-fr="Stratégie de croissance">Growth Strategy</h3>
-          <p data-en="Optimized campaigns & A/B testing to maximize your marketing ROI."
-             data-fr="Campagnes optimisées et tests A/B pour maximiser votre retour sur investissement."></p>
+
+        <div class="services-grid" role="list">
+          <article class="service" role="listitem">
+            <h5 data-i18n='{"en":"Paid Social Ads","fr":"Publicités sociales"}'>Paid Social Ads</h5>
+            <p data-i18n='{"en":"High-converting Facebook & Instagram campaigns for membership growth.","fr":"Campagnes Facebook & Instagram à haute conversion pour augmenter les adhésions."}'>High-converting Facebook & Instagram campaigns for membership growth.</p>
+          </article>
+
+          <article class="service" role="listitem">
+            <h5 data-i18n='{"en":"Lead Generation Funnels","fr":"Tunnels de leads"}'>Lead Generation Funnels</h5>
+            <p data-i18n='{"en":"Automated landing pages, retargeting and booking flows that convert.","fr":"Pages d'atterrissage automatisées, retargeting et flows de réservation qui convertissent."}'>Automated landing pages, retargeting and booking flows that convert.</p>
+          </article>
+
+          <article class="service" role="listitem">
+            <h5 data-i18n='{"en":"Content Creation","fr":"Création de contenu"}'>Content Creation</h5>
+            <p data-i18n='{"en":"Short-form video, reels and ad creatives that turn followers into members.","fr":"Vidéos courtes, reels et créations publicitaires qui transforment les abonnés en membres."}'>Short-form video, reels and ad creatives that turn followers into members.</p>
+          </article>
+
+          <article class="service" role="listitem">
+            <h5 data-i18n='{"en":"Membership Growth Strategy","fr":"Stratégie de croissance"}'>Membership Growth Strategy</h5>
+            <p data-i18n='{"en":"A/B testing, retention, pricing and funnels to scale sustainably.","fr":"Tests A/B, rétention, tarification et funnels pour scaler durablement."}'>A/B testing, retention, pricing and funnels to scale sustainably.</p>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" style="background:#0b1f3b;" data-animate>
-    <div class="container">
-      <h2 data-en="Request Your Free Growth Audit" data-fr="Demandez votre audit gratuit"></h2>
-      <p data-en="We guarantee 10+ new members per month or your money back."
-         data-fr="Nous garantissons 10+ nouveaux membres par mois ou votre argent remboursé."></p>
-      <form action="https://formspree.io/f/xdkyongv" method="POST">
-        <input type="text" name="name" placeholder="Your Name / Votre Nom" required>
-        <input type="email" name="_replyto" placeholder="Your Email / Votre Email" required>
-        <input type="tel" name="phone" placeholder="Your Phone / Votre Téléphone" required>
-        <input type="text" name="gym" placeholder="Gym Name / Nom de la Salle">
-        <button type="submit" class="btn btn-primary" data-en="Request Audit" data-fr="Demander un audit">Request Audit</button>
-      </form>
-      <button class="btn btn-secondary" style="margin-top:20px;" onclick="window.open('https://calendly.com/valorix-marketing-agency/new-meeting','_blank')" data-en="Book a 15-Minute Call" data-fr="Réserver un appel de 15 min">Book a 15-Minute Call</button>
-    </div>
-  </section>
+    <!-- CASE STUDIES -->
+    <section id="case-studies" class="section" aria-label="Case studies">
+      <div class="container">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+          <div>
+            <div class="title" data-i18n='{"en":"Case Studies","fr":"Cas d\\'étude"}'>Case Studies</div>
+            <div class="micro" data-i18n='{"en":"Real results from our gym partners.","fr":"Résultats réels de nos partenaires."}'>Real results from our gym partners.</div>
+          </div>
+          <div><a class="btn btn-primary" href="#booking" data-route data-i18n='{"en":"Book a Call","fr":"Réserver"}'>Book a Call</a></div>
+        </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Valorix Media — Gym Marketing Experts</p>
-    <p>Email: <a href="mailto:valorix.marketing.agency@gmail.com">valorix.marketing.agency@gmail.com</a></p>
-  </footer>
+        <div class="cases">
+          <div class="case">
+            <div style="flex:0 0 72px;height:56px;border-radius:10px;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#07152e;font-weight:800">+150%</div>
+            <div>
+              <div class="micro" data-i18n='{"en":"Conversion uplift: 150% in 12 weeks","fr":"Augmentation: +150% en 12 semaines"}'>Conversion uplift: 150% in 12 weeks</div>
+              <div class="micro" style="color:var(--muted)" data-i18n='{"en":"Boutique gym — double signups with a premium funnel.","fr":"Salle boutique — doublement des inscriptions via un funnel premium."}'>Boutique gym — double signups with a premium funnel.</div>
+            </div>
+          </div>
 
-  <!-- JS for Animations & Language Toggle -->
-  <script>
-    // Fade Animation
-    const animateEls = document.querySelectorAll('[data-animate]');
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}
-      });
-    },{threshold:0.2});
-    animateEls.forEach(el=>observer.observe(el));
+          <div class="case">
+            <div style="flex:0 0 72px;height:56px;border-radius:10px;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#07152e;font-weight:800">+98</div>
+            <div>
+              <div class="micro" data-i18n='{"en":"98 new members in 1 month","fr":"98 nouveaux membres en 1 mois"}'>98 new members in 1 month</div>
+              <div class="micro" style="color:var(--muted)" data-i18n='{"en":"City gym — lead magnet + retargeting drive.","fr":"Salle urbaine — lead magnet + retargeting."}'>City gym — lead magnet + retargeting drive.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    // Language Toggle
-    const enBtn = document.getElementById('en-btn');
-    const frBtn = document.getElementById('fr-btn');
-    const translatable = document.querySelectorAll('[data-en]');
-    function setLang(lang){
-      translatable.forEach(el=>{
-        el.innerText = el.getAttribute(`data-${lang}`);
-      });
-    }
-    enBtn.onclick=()=>setLang('en');
-    frBtn.onclick=()=>setLang('fr');
-    setLang('en');
+    <!-- BOOKING with inline Calendly -->
+    <section id="booking" class="section" aria-label="Booking">
+      <div class="container">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+          <div>
+            <div class="title" data-i18n='{"en":"Book a Strategy Call","fr":"Réservez un appel stratégique"}'>Book a Strategy Call</div>
+            <div class="micro" data-i18n='{"en":"15-minute audit. We’ll give 3 quick wins you can implement this week.","fr":"Audit de 15 minutes. 3 actions rapides à mettre en œuvre cette semaine."}'>15-minute audit. We’ll give 3 quick wins you can implement this week.</div>
+          </div>
+          <div>
+            <a id="calendly-open" class="btn btn-ghost" href="#" role="button" data-i18n='{"en":"Open Inline Booking","fr":"Ouvrir la réservation"}'>Open Inline Booking</a>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;">
+          <div id="calendly-wrap" class="calendly-wrap" aria-label="Calendly">
+            <!-- Calendly inline iframe. Change domain query params if hosting on a real domain -->
+            <iframe id="calendly-frame" class="calendly-iframe" src="https://calendly.com/valorix-marketing-agency/new-meeting?embed_domain=localhost&embed_type=Inline" title="Calendly" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section" aria-label="Contact">
+      <div class="container" style="display:flex;flex-direction:column;align-items:center;gap:12px">
+        <div class="title" data-i18n='{"en":"Contact Valorix","fr":"Contactez Valorix"}'>Contact Valorix</div>
+        <div class="micro" data-i18n='{"en":"Prefer email? Send us a message and we’ll reply in 24 hours.","fr":"Préférez l'e-mail ? Envoyez-nous un message — réponse sous 24 heures."}'>Prefer email? Send us a message and we’ll reply in 24 hours.</div>
+
+        <form action="https://formspree.io/f/xdkyongv" method="POST" class="contact-grid" role="form">
+          <input name="name" class="input" placeholder="Your name / Votre nom" required>
+          <input name="_replyto" type="email" class="input" placeholder="Email / Email" required>
+          <input name="gym" class="input" placeholder="Gym / Salle">
+          <input name="phone" class="input" placeholder="Phone / Téléphone">
+          <textarea name="message" class="input" placeholder="How can we help? / Comment pouvons-nous aider ?" rows="4"></textarea>
+          <button type="submit" class="submit" style="grid-column:1 / -1">Send Message</button>
+        </form>
+
+        <div style="margin-top:14px;color:var(--muted)">Email: <a href="mailto:valorix.marketing.agency@gmail.com">valorix.marketing.agency@gmail.com</a></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo" aria-label="Footer">
+      <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="logo" style="width:40px;height:40px">V</div>
+          <div>
+            <div style="font-weight:800">VALORIX MEDIA</div>
+            <div class="micro" style="color:var(--muted)">Gym Marketing — Social Ads & Funnels</div>
+          </div>
+        </div>
+
+        <div class="micro">© <span id="year"></span> Valorix Media</div>
+
+        <div style="display:flex;gap:12px;align-items:center">
+          <a href="#services" data-route class="micro">Services</a>
+          <a href="#case-studies" data-route class="micro">Case studies</a>
+          <a href="#booking" data-route class="micro">Book</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Valorix Media",
+    "url": "https://yourdomain.com",
+    "logo": "https://yourdomain.com/logo.png",
+    "email": "valorix.marketing.agency@gmail.com",
+    "description": "Gym marketing agency - social ads, funnels, content. 10+ members/month guarantee."
+  }
   </script>
 
+  <!-- Inline JS: translations, theme, SPA, particles, reveals, calendly UX -->
+  <script>
+    (function() {
+      "use strict";
+
+      // Helpers
+      const nowYear = document.getElementById('year');
+      if (nowYear) { nowYear.textContent = new Date().getFullYear(); }
+
+      // I18N: simple JSON inline via data-i18n attributes
+      const i18nNodes = Array.from(document.querySelectorAll('[data-i18n]'));
+      const LANG = { current: localStorage.getItem('valorix_lang') || 'en' };
+      function applyLang(lang) {
+        LANG.current = lang;
+        localStorage.setItem('valorix_lang', lang);
+        i18nNodes.forEach(node => {
+          try {
+            const mapping = JSON.parse(node.getAttribute('data-i18n'));
+            if (mapping && mapping[lang]) {
+              node.textContent = mapping[lang];
+            }
+          } catch (e) {
+            // ignore parse errors
+          }
+        });
+        document.documentElement.lang = (lang === 'fr') ? 'fr' : 'en';
+      }
+      document.getElementById('btn-en').addEventListener('click', function() { applyLang('en'); });
+      document.getElementById('btn-fr').addEventListener('click', function() { applyLang('fr'); });
+      applyLang(LANG.current);
+
+      // Theme toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      const THEME = { current: localStorage.getItem('valorix_theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark') };
+      function applyTheme(t) {
+        if (t === 'light') {
+          document.documentElement.classList.add('light');
+        } else {
+          document.documentElement.classList.remove('light');
+        }
+        localStorage.setItem('valorix_theme', t);
+        themeToggle.setAttribute('aria-pressed', t === 'light');
+        themeToggle.textContent = (t === 'light') ? '🌞' : '🌙';
+      }
+      themeToggle.addEventListener('click', function() {
+        THEME.current = (THEME.current === 'light') ? 'dark' : 'light';
+        applyTheme(THEME.current);
+      });
+      themeToggle.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); themeToggle.click(); }
+      });
+      applyTheme(THEME.current);
+
+      // Simple hash routing (SPA)
+      const sections = Array.from(document.querySelectorAll('main > section'));
+      const navLinks = Array.from(document.querySelectorAll('nav.main-nav a'));
+      function route() {
+        const hash = (location.hash || '#home').replace('#', '') || 'home';
+        sections.forEach(s => {
+          s.style.display = (s.id === hash) ? '' : 'none';
+        });
+        navLinks.forEach(a => {
+          const href = (a.getAttribute('href') || '#home').replace('#', '') || 'home';
+          a.classList.toggle('active', href === hash);
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      window.addEventListener('hashchange', route);
+      if (!location.hash) { location.hash = '#home'; }
+      route();
+
+      // Make internal data-route anchors update route quickly
+      Array.from(document.querySelectorAll('[data-route]')).forEach(el => {
+        el.addEventListener('click', function() { setTimeout(route, 60); });
+      });
+
+      // Lead form UX with Formspree; graceful handling
+      const leadForm = document.getElementById('lead-form');
+      if (leadForm) {
+        leadForm.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const submit = leadForm.querySelector('.submit');
+          const prevText = submit.textContent;
+          submit.disabled = true;
+          submit.textContent = (LANG.current === 'fr') ? 'Envoi...' : 'Sending...';
+          const data = new FormData(leadForm);
+          try {
+            const res = await fetch(leadForm.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+            if (res.ok) {
+              submit.textContent = (LANG.current === 'fr') ? 'Merci — à bientôt' : 'Thanks — we will be in touch';
+              leadForm.reset();
+              setTimeout(function() { submit.disabled = false; submit.textContent = prevText; }, 2400);
+            } else {
+              throw new Error('Form submission failed');
+            }
+          } catch (err) {
+            submit.disabled = false;
+            submit.textContent = (LANG.current === 'fr') ? 'Erreur, réessayez' : 'Error, try again';
+            setTimeout(function() { submit.textContent = prevText; }, 2200);
+          }
+        });
+      }
+
+      // Calendly open button behavior (scroll to iframe)
+      const calendlyOpen = document.getElementById('calendly-open');
+      if (calendlyOpen) {
+        calendlyOpen.addEventListener('click', function(e) {
+          e.preventDefault();
+          const wrap = document.getElementById('calendly-wrap');
+          if (wrap) { wrap.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+          else { window.open('https://calendly.com/valorix-marketing-agency/new-meeting', '_blank', 'noopener'); }
+        });
+      }
+      const bookCall = document.getElementById('book-call');
+      if (bookCall) {
+        bookCall.addEventListener('click', function(e) {
+          e.preventDefault();
+          location.hash = '#booking';
+          setTimeout(function() { document.getElementById('calendly-wrap').scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 160);
+        });
+      }
+
+      // Intersection reveal animations (lightweight)
+      const revealTargets = document.querySelectorAll('.service, .case, .card, .hero h1, .hero p, .cta-row, .kpi, .title');
+      const revealObserver = new IntersectionObserver(function(entries, obs) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'none';
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealTargets.forEach(function(el) {
+        el.style.opacity = 0;
+        el.style.transform = 'translateY(20px)';
+        revealObserver.observe(el);
+      });
+
+      // Particles canvas
+      (function particles() {
+        const canvas = document.getElementById('particles');
+        if (!canvas) { return; }
+        const ctx = canvas.getContext('2d');
+        let w = canvas.width = window.innerWidth;
+        let h = canvas.height = window.innerHeight;
+        let particles = [];
+        const count = Math.max(24, Math.floor((w * h) / 150000));
+        function rand(min, max) { return Math.random() * (max - min) + min; }
+        function init() {
+          particles = [];
+          for (let i = 0; i < count; i++) {
+            particles.push({
+              x: rand(0, w),
+              y: rand(0, h),
+              r: rand(0.6, 3.6),
+              vx: rand(-0.06, 0.06),
+              vy: rand(-0.02, 0.02),
+              a: rand(0.04, 0.28)
+            });
+          }
+        }
+        function step() {
+          ctx.clearRect(0, 0, w, h);
+          for (const p of particles) {
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < -10) { p.x = w + 10; }
+            if (p.x > w + 10) { p.x = -10; }
+            if (p.y < -10) { p.y = h + 10; }
+            if (p.y > h + 10) { p.y = -10; }
+            const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 6);
+            grad.addColorStop(0, `rgba(255,122,0,${p.a})`);
+            grad.addColorStop(1, `rgba(255,42,0,0)`);
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fill();
+          }
+          requestAnimationFrame(step);
+        }
+        function onResize() {
+          w = canvas.width = window.innerWidth;
+          h = canvas.height = window.innerHeight;
+          init();
+        }
+        window.addEventListener('resize', onResize);
+        init();
+        step();
+      })();
+
+      // Floating images parallax (mouse & scroll)
+      (function floatingParallax() {
+        const floats = Array.from(document.querySelectorAll('.float-img'));
+        if (!floats.length) { return; }
+        let mx = 0, my = 0;
+        window.addEventListener('mousemove', function(e) {
+          mx = (e.clientX - window.innerWidth / 2) / (window.innerWidth / 2);
+          my = (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2);
+          floats.forEach(function(el, i) {
+            const depth = (i + 1) / 12;
+            const tx = mx * 36 * depth;
+            const ty = my * 24 * depth;
+            const rot = (mx + my) * 6 * depth;
+            el.style.transform = `translate3d(${tx}px, ${ty}px, 0) rotate(${rot}deg)`;
+          });
+        });
+        // subtle scroll parallax
+        window.addEventListener('scroll', function() {
+          const s = window.scrollY;
+          floats.forEach(function(el, i) {
+            const baseTop = parseFloat(el.getAttribute('data-base-top') || 0);
+            const offset = baseTop - s * 0.06 * (i + 1);
+            el.style.top = (offset) + 'px';
+          });
+        });
+        // initialize base-top
+        floats.forEach(function(el, i) {
+          const rect = el.getBoundingClientRect();
+          el.setAttribute('data-base-top', rect.top + window.scrollY);
+        });
+      })();
+
+      // Small local visit counter (not tracking external)
+      try {
+        const visits = Number(localStorage.getItem('valorix_visits') || 0) + 1;
+        localStorage.setItem('valorix_visits', String(visits));
+      } catch (e) {
+        // ignore
+      }
+
+    })();
+  </script>
 </body>
 </html>
