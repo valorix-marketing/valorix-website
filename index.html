@@ -3,89 +3,232 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valorix Media - Gym Marketing Agency</title>
+  <title>Valorix Media — Gym Marketing Agency</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body { margin:0; font-family: 'Inter', sans-serif; background: #0b1f3b; color:white; }
-    a { color:white; text-decoration:none; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    .btn { cursor:pointer; font-weight:bold; border:none; border-radius:6px; transition:all 0.2s ease; }
-    .btn-primary { background: linear-gradient(90deg, #ff7a00, #ff2a00); color:#0b1f3b; padding:12px 24px; }
-    .btn-primary:hover { transform:scale(1.05); }
-    .btn-secondary { background:transparent; border:2px solid white; padding:12px 24px; }
-    .btn-secondary:hover { background:white; color:#0b1f3b; transform:scale(1.05); }
-    section { padding:80px 0; text-align:center; }
-    h1,h2,h3 { margin:0 0 20px 0; }
-    .services { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-    .service-card { background:#112e50; padding:20px; border-radius:8px; width:250px; transition:all 0.2s ease; }
-    .service-card:hover { transform:scale(1.05); }
-    form { display:flex; flex-direction:column; gap:12px; max-width:400px; margin:0 auto; }
-    input, textarea { padding:12px; border-radius:6px; border:none; font-size:16px; }
-    footer { background:#0a1730; padding:40px 0; font-size:14px; color:#aaa; text-align:center; }
-    @media(max-width:768px) { .services { flex-direction:column; align-items:center; } }
+    /* ====== Base ====== */
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family:'Inter', sans-serif;
+      background: radial-gradient(circle at top left, #0b1f3b, #07152e);
+      color:white;
+      scroll-behavior:smooth;
+      overflow-x:hidden;
+    }
+    .container {max-width:1200px; margin:0 auto; padding:0 20px;}
+    a {color:inherit; text-decoration:none;}
+    h1,h2,h3 {font-weight:700;}
+    section {padding:100px 0; text-align:center;}
+    
+    /* ====== Header ====== */
+    header {
+      position:fixed;
+      top:0; left:0; width:100%;
+      background:rgba(11,31,59,0.9);
+      backdrop-filter: blur(8px);
+      display:flex; justify-content:space-between; align-items:center;
+      padding:15px 40px;
+      z-index:1000;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+    header h1 {font-size:1.3rem; color:#ff7a00; letter-spacing:0.5px;}
+    .lang-toggle {
+      display:flex; gap:10px; align-items:center;
+    }
+    .lang-toggle img {
+      width:30px; height:20px; cursor:pointer; border-radius:4px; border:1px solid rgba(255,255,255,0.3);
+      transition:all 0.3s ease;
+    }
+    .lang-toggle img:hover {transform:scale(1.1);}
+
+    /* ====== Hero ====== */
+    .hero {
+      min-height:100vh;
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      background:linear-gradient(180deg,#0b1f3b,#112e50);
+      padding:120px 20px 80px;
+      text-align:center;
+    }
+    .hero h2 {
+  font-size: 2.8rem;
+  background: linear-gradient(90deg, #ff7a00, #ff2a00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* fallback for non-supporting browsers */
+  margin-bottom: 20px;
+}
+
+    .hero p {max-width:700px; color:#d7e0f5; font-size:1.2rem; margin-bottom:40px;}
+    .hero-buttons {display:flex; gap:20px; flex-wrap:wrap; justify-content:center;}
+    
+    /* ===== Buttons ===== */
+    .btn {
+      border:none; border-radius:10px; padding:14px 32px; font-weight:600; font-size:16px;
+      cursor:pointer; transition:all 0.3s ease;
+    }
+    .btn-primary {
+      background:linear-gradient(90deg,#ff7a00,#ff2a00);
+      color:#0b1f3b;
+      box-shadow:0 0 20px rgba(255,122,0,0.4);
+    }
+    .btn-primary:hover {
+      transform:scale(1.05);
+      box-shadow:0 0 25px rgba(255,122,0,0.6);
+    }
+    .btn-secondary {
+      border:2px solid white;
+      background:transparent;
+      color:white;
+    }
+    .btn-secondary:hover {
+      background:white; color:#0b1f3b; transform:scale(1.05);
+    }
+
+    /* ====== Services ====== */
+    .services {
+      display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:50px;
+    }
+    .service-card {
+      background:#112e50; padding:30px; border-radius:12px; width:260px;
+      transition:all 0.4s ease; box-shadow:0 0 10px rgba(0,0,0,0.3);
+    }
+    .service-card:hover {
+      transform:translateY(-10px) scale(1.05);
+      box-shadow:0 0 25px rgba(255,122,0,0.3);
+    }
+    .service-card h3 {color:#ff7a00; margin-bottom:10px;}
+    .service-card p {color:#d7e0f5; font-size:0.95rem;}
+
+    /* ====== Form ====== */
+    form {
+      display:flex; flex-direction:column; gap:15px;
+      max-width:420px; margin:40px auto 0;
+    }
+    input {
+      padding:14px; border-radius:8px; border:none; font-size:16px;
+      outline:none;
+    }
+    input:focus {box-shadow:0 0 8px #ff7a00;}
+    
+    /* ====== Footer ====== */
+    footer {
+      background:#0a1730; padding:40px 0; text-align:center; color:#aaa; font-size:14px;
+    }
+    footer a:hover {color:#ff7a00;}
+
+    /* ===== Animations ===== */
+    [data-animate] {opacity:0; transform:translateY(30px); transition:all 0.6s ease-out;}
+    [data-animate].visible {opacity:1; transform:translateY(0);}
+    @media(max-width:768px){
+      .services {flex-direction:column; align-items:center;}
+      .hero h2 {font-size:2rem;}
+      header {padding:15px 20px;}
+    }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <section style="background:linear-gradient(180deg,#0b1f3b,#112e50);">
+  <!-- Header -->
+  <header>
+    <h1>VALORIX MEDIA</h1>
+    <div class="lang-toggle">
+      <img src="https://flagcdn.com/w20/us.png" alt="English" id="en-btn" title="English">
+      <img src="https://flagcdn.com/w20/fr.png" alt="Français" id="fr-btn" title="Français">
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="hero" data-animate>
     <div class="container">
-      <h1 style="font-size:2.5rem;">Get 10+ New Gym Members Every Month — Or Your Money Back</h1>
-      <p style="font-size:1.2rem; max-width:700px; margin:20px auto;">
-        Valorix Media helps gyms grow memberships with high-converting social media campaigns, lead funnels, and content that converts.
-      </p>
-      <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
-        <button class="btn btn-primary" onclick="window.open('https://calendly.com/valorix-marketing-agency/new-meeting','_blank')">Book Free Strategy Call</button>
-        <a href="#contact" class="btn btn-secondary">Request Free Audit</a>
+      <h2 data-en="Get 10+ New Gym Members Every Month — Or Your Money Back"
+          data-fr="Obtenez 10+ nouveaux membres chaque mois — ou remboursement garanti"></h2>
+      <p data-en="Valorix Media helps gyms grow with powerful social media campaigns, automated funnels, and high-performing content."
+         data-fr="Valorix Media aide les salles de sport à se développer grâce à des campagnes sur les réseaux sociaux, des tunnels automatisés et du contenu performant."></p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" onclick="window.open('https://calendly.com/valorix-marketing-agency/new-meeting','_blank')" data-en="Book Free Strategy Call" data-fr="Réserver un appel gratuit">Book Free Strategy Call</button>
+        <a href="#contact" class="btn btn-secondary" data-en="Request Free Audit" data-fr="Demander un audit gratuit">Request Free Audit</a>
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section style="background:#112e50;">
+  <!-- Services -->
+  <section style="background:#112e50;" data-animate>
     <div class="container">
-      <h2>Our Services</h2>
+      <h2 data-en="Our Services" data-fr="Nos Services"></h2>
+      <p data-en="Everything your gym needs to grow — all in one place." data-fr="Tout ce dont votre salle de sport a besoin pour croître — en un seul endroit."></p>
       <div class="services">
         <div class="service-card">
-          <h3>Paid Social Ads</h3>
-          <p>Facebook & Instagram campaigns that attract new members.</p>
+          <h3 data-en="Paid Social Ads" data-fr="Publicités sur les réseaux sociaux">Paid Social Ads</h3>
+          <p data-en="Facebook & Instagram ads that attract new members ready to join."
+             data-fr="Campagnes Facebook & Instagram qui attirent de nouveaux membres prêts à s’inscrire."></p>
         </div>
         <div class="service-card">
-          <h3>Lead Generation Funnels</h3>
-          <p>Automated booking pages to fill your classes.</p>
+          <h3 data-en="Lead Generation Funnels" data-fr="Tunnels de génération de leads">Lead Generation Funnels</h3>
+          <p data-en="Automated booking pages that fill your gym classes efficiently."
+             data-fr="Pages de réservation automatisées pour remplir vos cours efficacement."></p>
         </div>
         <div class="service-card">
-          <h3>Content Creation</h3>
-          <p>Short-form videos & reels that convert followers into members.</p>
+          <h3 data-en="Content Creation" data-fr="Création de contenu">Content Creation</h3>
+          <p data-en="Short-form videos and reels that turn followers into paying clients."
+             data-fr="Vidéos et reels percutants qui transforment les abonnés en clients."></p>
         </div>
         <div class="service-card">
-          <h3>Membership Growth Strategy</h3>
-          <p>Optimized campaigns & A/B testing to maximize ROI.</p>
+          <h3 data-en="Growth Strategy" data-fr="Stratégie de croissance">Growth Strategy</h3>
+          <p data-en="Optimized campaigns & A/B testing to maximize your marketing ROI."
+             data-fr="Campagnes optimisées et tests A/B pour maximiser votre retour sur investissement."></p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Lead Form Section -->
-  <section id="contact" style="background:#0b1f3b;">
+  <!-- Contact -->
+  <section id="contact" style="background:#0b1f3b;" data-animate>
     <div class="container">
-      <h2>Request Your Free Growth Audit</h2>
-      <p>We guarantee 10+ new gym members every month or your money back.</p>
+      <h2 data-en="Request Your Free Growth Audit" data-fr="Demandez votre audit gratuit"></h2>
+      <p data-en="We guarantee 10+ new members per month or your money back."
+         data-fr="Nous garantissons 10+ nouveaux membres par mois ou votre argent remboursé."></p>
       <form action="https://formspree.io/f/xdkyongv" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="_replyto" placeholder="Your Email" required>
-        <input type="text" name="gym" placeholder="Gym Name">
-        <button type="submit" class="btn btn-primary">Request Audit</button>
+        <input type="text" name="name" placeholder="Your Name / Votre Nom" required>
+        <input type="email" name="_replyto" placeholder="Your Email / Votre Email" required>
+        <input type="tel" name="phone" placeholder="Your Phone / Votre Téléphone" required>
+        <input type="text" name="gym" placeholder="Gym Name / Nom de la Salle">
+        <button type="submit" class="btn btn-primary" data-en="Request Audit" data-fr="Demander un audit">Request Audit</button>
       </form>
-      <button class="btn btn-secondary" style="margin-top:20px;" onclick="window.open('https://calendly.com/valorix-marketing-agency/new-meeting','_blank')">Book a 15-min Call</button>
+      <button class="btn btn-secondary" style="margin-top:20px;" onclick="window.open('https://calendly.com/valorix-marketing-agency/new-meeting','_blank')" data-en="Book a 15-Minute Call" data-fr="Réserver un appel de 15 min">Book a 15-Minute Call</button>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Valorix Media — Social Media Marketing for Gyms</p>
-    <p>Email: <a href="mailto:hello@valorixagency.com">hello@valorixagency.com</a></p>
+    <p>© 2025 Valorix Media — Gym Marketing Experts</p>
+    <p>Email: <a href="mailto:valorix.marketing.agency@gmail.com">valorix.marketing.agency@gmail.com</a></p>
   </footer>
+
+  <!-- JS for Animations & Language Toggle -->
+  <script>
+    // Fade Animation
+    const animateEls = document.querySelectorAll('[data-animate]');
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}
+      });
+    },{threshold:0.2});
+    animateEls.forEach(el=>observer.observe(el));
+
+    // Language Toggle
+    const enBtn = document.getElementById('en-btn');
+    const frBtn = document.getElementById('fr-btn');
+    const translatable = document.querySelectorAll('[data-en]');
+    function setLang(lang){
+      translatable.forEach(el=>{
+        el.innerText = el.getAttribute(`data-${lang}`);
+      });
+    }
+    enBtn.onclick=()=>setLang('en');
+    frBtn.onclick=()=>setLang('fr');
+    setLang('en');
+  </script>
 
 </body>
 </html>
